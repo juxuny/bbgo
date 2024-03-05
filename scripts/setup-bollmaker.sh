@@ -20,7 +20,7 @@ function info()
 {
     echo -e "${GREEN}$@${NC}"
 }
-version=$(curl -fs https://api.github.com/repos/c9s/bbgo/releases/latest | awk -F '"' '/tag_name/{print $4}')
+version=$(curl -Lfs https://api.github.com/repos/c9s/bbgo/releases/latest | awk -F '"' '/tag_name/{print $4}')
 osf=$(uname | tr '[:upper:]' '[:lower:]')
 arch=""
 case $(uname -m) in
